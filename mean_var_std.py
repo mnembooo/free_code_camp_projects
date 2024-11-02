@@ -7,20 +7,35 @@ def calculate(numbers):
     data = np.reshape(np.array(numbers), (3, 3))
     calculations = {}
     
-    operations = {
-        'mean': np.mean,
-        'variance': np.var,
-        'standard deviation': np.std,
-        'max': np.max,
-        'min': np.min,
-        'sum': np.sum
-    }
-    
-    for name, func in operations.items():
-        calculations[name] = [
-            func(data, axis=0).tolist(),
-            func(data, axis=1).tolist(),
-            func(data.flatten()).tolist()
-        ]
+    calculations['mean'] = [
+        np.mean(data, axis=0).tolist(),    
+        np.mean(data, axis=1).tolist(),    
+        np.mean(data).tolist()             
+    ]
+    calculations['variance'] = [
+        np.var(data, axis=0).tolist(),     
+        np.var(data, axis=1).tolist(),     
+        np.var(data).tolist()              
+    ]
+    calculations['standard deviation'] = [
+        np.std(data, axis=0).tolist(),     
+        np.std(data, axis=1).tolist(),     
+        np.std(data).tolist()              
+    ]
+    calculations['max'] = [
+        np.max(data, axis=0).tolist(),     
+        np.max(data, axis=1).tolist(),     
+        np.max(data).tolist()              
+    ]
+    calculations['min'] = [
+        np.min(data, axis=0).tolist(),
+        np.min(data, axis=1).tolist(),     
+        np.min(data).tolist()              
+    ]
+    calculations['sum'] = [
+        np.sum(data, axis=0).tolist(),     
+        np.sum(data, axis=1).tolist(),     
+        np.sum(data).tolist()              
+    ]
     
     return calculations
